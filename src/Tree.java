@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
 
-/**
- * Created by petrovich on 4/21/17.
- */
 public class Tree {
 
     private String node;

@@ -1,16 +1,12 @@
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.ParseException;
 
-/**
- * Created by petrovich on 4/21/17.
- */
 public class LexicalAnalyzer {
     private InputStream is;
     private int curChar, curPos, lastChar;
     private Token curToken;
 
-    public LexicalAnalyzer(InputStream is) throws ParseException {
+    public LexicalAnalyzer(InputStream is) throws Pexception {
         this.is = is;
         curPos = 0;
         nextChar();
@@ -20,12 +16,12 @@ public class LexicalAnalyzer {
         return c == ' ' || c == '\r' || c == '\n' || c == '\t';
     }
 
-    private void nextChar() throws ParseException {
+    private void nextChar() throws Pexception {
         curPos++;
         try {
             curChar = is.read();
         } catch (IOException e) {
-            throw new ParseException(e.getMessage(), curPos);
+            throw new Pexception(e.getMessage() + " pos: " + curPos);
         }
     }
 
@@ -37,9 +33,13 @@ public class LexicalAnalyzer {
         return curPos;
     }
 
+    public int curChar() {
+        return curChar;
+    }
+
     public int lastChar() { return lastChar; }
 
-    public void nextToken() throws ParseException {
+    public void nextToken() throws Pexception {
         while (isBlank(curChar)) {
             nextChar();
         }
@@ -70,7 +70,7 @@ public class LexicalAnalyzer {
                     nextChar();
                     break;
                 } else {
-                    throw new ParseException("Illegal character " + (char) curChar, curPos);
+                    throw new Pexception("Illegal character " + (char) curChar + " pos: " + curPos);
                 }
         }
     }

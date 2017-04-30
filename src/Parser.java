@@ -1,5 +1,5 @@
 import java.io.InputStream;
-import java.text.ParseException;
+import java.util.Arrays;
 
 /**
  * Created by petrovich on 4/21/17.
@@ -7,95 +7,102 @@ import java.text.ParseException;
 public class Parser {
     private LexicalAnalyzer lex;
 
-    private Tree S() throws ParseException {
+    private void check(Token... arr) throws Pexception {
+        for (Token t: arr) {
+            if (t == lex.curToken()) {
+                return;
+            }
+        }
+        throw new Pexception("unexpected symbol: " + lex.curToken().toString() + (char) lex.curChar() + " expected: " + Arrays.toString(arr));
+    }
+
+    private Tree S() throws Pexception {
+        Tree e = E();
         switch (lex.curToken()) {
-            case OPEN_BRACKET:
-            case CHARACTER:
-                Tree arg = C();
-                if (lex.curToken() == Token.END) {
-                    return new Tree("S", arg);
-                }
-                throw new ParseException("Unexpected non-end at ", lex.curPos());
             case END:
-                return new Tree("S");
-            case CHOOSE:
-                throw new ParseException("Unexpected token | at", lex.curPos());
-            case KLEENE_CLOSURE:
-                throw new ParseException("Unexpected token * at", lex.curPos());
-            case CLOSE_BRACKET:
-                throw new ParseException("Unexpected token ) at", lex.curPos());
-            default:
-                throw new AssertionError();
+                return new Tree("S", e);
+            default:   
+                throw new AssertionError();     
         }
     }
 
-    private Tree Scont() throws ParseException {
+    private Tree E() throws Pexception {
+        return new Tree("E", T(), E1());
+    }
+
+    private Tree E1() throws Pexception{
+        check(Token.CHOOSE, Token.CHARACTER, Token.OPEN_BRACKET, Token.CLOSE_BRACKET, Token.END);
         switch (lex.curToken()) {
-            case OPEN_BRACKET:
             case CHARACTER:
-            case KLEENE_CLOSURE:
+            case OPEN_BRACKET:
+                return new Tree("E1", F() ,T1());
             case CHOOSE:
-                Tree arg = Ccont();
-                return new Tree("S'", arg);
             case END:
-                return new Tree("S'");
-            default:
-                return new Tree("S'");
+            case CLOSE_BRACKET:
+                return new Tree("E1");
+            default:    
+                throw new AssertionError();
         }
     }
 
-    private Tree Ccont() throws ParseException {
-        Tree cont, after;
+    private Tree F() throws Pexception {
+        return new Tree("F", A(), F1());
+    }
+
+    private Tree F1() throws Pexception {
+        check(Token.KLEENE_CLOSURE, Token.CHARACTER, Token.CHOOSE, Token.END, Token.OPEN_BRACKET, Token.CLOSE_BRACKET);
         switch (lex.curToken()) {
             case KLEENE_CLOSURE:
-                lex.nextToken();
-                cont = Scont();
-                return new Tree("C'", new Tree("*"), cont);
-            case CHOOSE:
-                lex.nextToken();
-                cont = C();
-                after = Scont();
-                return new Tree("C'", new Tree("|"), cont, after);
-            case OPEN_BRACKET:
+                return new Tree("F1", new Tree("*"), F1());
             case CHARACTER:
-                cont = C();
-                after = Scont();
-                return new Tree("C'", cont, after);
+            case CHOOSE:
+            case END:
+            case OPEN_BRACKET:
             case CLOSE_BRACKET:
-                throw new ParseException(")", lex.curPos());
+                return new Tree("F1");
             default:
                 throw new AssertionError();
         }
     }
 
-    private Tree C() throws ParseException {
+    private Tree T() throws Pexception {
+        return new Tree("T", F(), T1());
+    }
+
+    private Tree T1() throws Pexception {
+        check(Token.KLEENE_CLOSURE, Token.CHARACTER, Token.CHOOSE, Token.END, Token.CLOSE_BRACKET, Token.OPEN_BRACKET);
+
         switch (lex.curToken()) {
-            case OPEN_BRACKET:
-                lex.nextToken();
-                Tree sub = C();
-                if (lex.curToken() != Token.CLOSE_BRACKET) {
-                    throw new ParseException("Expected token ) at ", lex.curPos());
-                }
-                lex.nextToken();
-                Tree cont = Scont();
-                return new Tree("C", new Tree("("), sub, new Tree(")"), cont);
-            case CHARACTER:
-                String val = String.valueOf((char) lex.lastChar());
-                lex.nextToken();
-                Tree s = Scont();
-                return new Tree("C", new Tree(val), s);
-            case CHOOSE:
-                throw new ParseException("Unexpected token | at", lex.curPos());
             case KLEENE_CLOSURE:
-                throw new ParseException("Unexpected token * at", lex.curPos());
+                lex.nextToken();
+                return new Tree("F1", new Tree("*"), F1());
+            case CHARACTER:
+            case CHOOSE:
+            case END:
             case CLOSE_BRACKET:
-                throw new ParseException("Unexpected token ) at", lex.curPos());
-            default:
+            case OPEN_BRACKET:
+                return new Tree("F1");
+            default:    
                 throw new AssertionError();
         }
     }
 
-    Tree parse(InputStream is) throws ParseException {
+
+    private Tree A() throws Pexception {
+        check(Token.CHARACTER, Token.OPEN_BRACKET);
+        switch (lex.curToken()){
+            case CHARACTER:
+                lex.nextToken();
+                return new Tree("A", new Tree((char)lex.lastChar()+""));
+            case OPEN_BRACKET:
+                lex.nextToken();
+                return new Tree("A", new Tree("("), E(), new Tree(")"));
+            default:    
+                throw new AssertionError();
+        }
+}
+
+    Tree parse(InputStream is) throws Pexception {
         lex = new LexicalAnalyzer(is);
         lex.nextToken();
         return S();
