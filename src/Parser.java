@@ -8,7 +8,7 @@ public class Parser {
     private LexicalAnalyzer lex;
 
     private void check(Token... arr) throws Pexception {
-        for (Token t: arr) {
+        for (Token t : arr) {
             if (t == lex.curToken()) {
                 return;
             }
@@ -21,8 +21,8 @@ public class Parser {
         switch (lex.curToken()) {
             case END:
                 return new Tree("S", e);
-            default:   
-                throw new AssertionError();     
+            default:
+                throw new AssertionError();
         }
     }
 
@@ -30,17 +30,18 @@ public class Parser {
         return new Tree("E", T(), E1());
     }
 
-    private Tree E1() throws Pexception{
-        check(Token.CHOOSE, Token.CHARACTER, Token.OPEN_BRACKET, Token.CLOSE_BRACKET, Token.END);
+    private Tree E1() throws Pexception {
+        check(Token.CHOOSE, Token.CLOSE_BRACKET, Token.END, Token.OPEN_BRACKET, Token.CHARACTER);
         switch (lex.curToken()) {
+            case CHOOSE:
             case CHARACTER:
             case OPEN_BRACKET:
-                return new Tree("E1", F() ,T1());
-            case CHOOSE:
+                lex.nextToken();
+                return new Tree("E'", new Tree("|"), T(), E1());
             case END:
             case CLOSE_BRACKET:
-                return new Tree("E1");
-            default:    
+                return new Tree("E'");
+            default:
                 throw new AssertionError();
         }
     }
@@ -53,13 +54,14 @@ public class Parser {
         check(Token.KLEENE_CLOSURE, Token.CHARACTER, Token.CHOOSE, Token.END, Token.OPEN_BRACKET, Token.CLOSE_BRACKET);
         switch (lex.curToken()) {
             case KLEENE_CLOSURE:
-                return new Tree("F1", new Tree("*"), F1());
+                lex.nextToken();
+                return new Tree("F'", new Tree("*"), F1());
             case CHARACTER:
             case CHOOSE:
             case END:
             case OPEN_BRACKET:
             case CLOSE_BRACKET:
-                return new Tree("F1");
+                return new Tree("F'");
             default:
                 throw new AssertionError();
         }
@@ -70,19 +72,16 @@ public class Parser {
     }
 
     private Tree T1() throws Pexception {
-        check(Token.KLEENE_CLOSURE, Token.CHARACTER, Token.CHOOSE, Token.END, Token.CLOSE_BRACKET, Token.OPEN_BRACKET);
-
+        check(Token.CHOOSE, Token.END, Token.CLOSE_BRACKET, Token.CHARACTER, Token.OPEN_BRACKET);
         switch (lex.curToken()) {
-            case KLEENE_CLOSURE:
-                lex.nextToken();
-                return new Tree("F1", new Tree("*"), F1());
             case CHARACTER:
+            case OPEN_BRACKET:
+                return new Tree("T'", F(), T1());
             case CHOOSE:
             case END:
             case CLOSE_BRACKET:
-            case OPEN_BRACKET:
-                return new Tree("F1");
-            default:    
+                return new Tree("T'");
+            default:
                 throw new AssertionError();
         }
     }
@@ -90,17 +89,20 @@ public class Parser {
 
     private Tree A() throws Pexception {
         check(Token.CHARACTER, Token.OPEN_BRACKET);
-        switch (lex.curToken()){
+        switch (lex.curToken()) {
             case CHARACTER:
+                String ch = String.valueOf((char) lex.lastChar());
                 lex.nextToken();
-                return new Tree("A", new Tree((char)lex.lastChar()+""));
+                return new Tree("A", new Tree(ch));
             case OPEN_BRACKET:
                 lex.nextToken();
-                return new Tree("A", new Tree("("), E(), new Tree(")"));
-            default:    
+                Tree a = new Tree("A", new Tree("("), E(), new Tree(")"));
+                lex.nextToken();
+                return a;
+            default:
                 throw new AssertionError();
         }
-}
+    }
 
     Tree parse(InputStream is) throws Pexception {
         lex = new LexicalAnalyzer(is);

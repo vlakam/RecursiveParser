@@ -38,11 +38,11 @@ public class Tree {
     private String Colorize() {
         if (node.equals("S") && children != null) {
             return "green";
-        } else if (node.equals("C")) {
+        } else if (node.equals("A")) {
             return "darkviolet";
-        } else if (node.equals("C'")) {
+        } else if (node.equals("E1")) {
             return "gold3";
-        } else if (node.equals("S'") && children != null) {
+        } else if (node.equals("F1") && children != null) {
             return "cyan";
         } else return "sienna";
     }
