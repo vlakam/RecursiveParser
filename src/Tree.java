@@ -40,11 +40,15 @@ public class Tree {
             return "green";
         } else if (node.equals("A")) {
             return "darkviolet";
-        } else if (node.equals("E1")) {
+        } else if (node.equals("E'") || node.equals("E")) {
             return "gold3";
-        } else if (node.equals("F1") && children != null) {
+        } else if (node.equals("F'") || node.equals("F")) {
             return "cyan";
-        } else return "sienna";
+        } else if (node.equals("T") || node.equals ("T'")) {
+            return "sienna";
+        }
+
+        return "lightblue";
     }
 
     private String generateChildRanks(int level) {

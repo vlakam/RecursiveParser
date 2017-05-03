@@ -60,6 +60,10 @@ public class LexicalAnalyzer {
                 nextChar();
                 curToken = Token.CHOOSE;
                 break;
+            case '+':
+                nextChar();
+                curToken = Token.PLUS;
+                break;
             case -1:
                 curToken = Token.END;
                 break;

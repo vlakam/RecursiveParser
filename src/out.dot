@@ -1,254 +1,71 @@
 graph g {
 	"705927765S0" [shape=circle, style=filled, fillcolor="green", label="S"];
-	"366712642E1" [shape=circle, style=filled, fillcolor="sienna", label="E"];
+	"366712642E1" [shape=circle, style=filled, fillcolor="gold3", label="E"];
 	"1829164700T2" [shape=circle, style=filled, fillcolor="sienna", label="T"];
-	"2018699554F3" [shape=circle, style=filled, fillcolor="sienna", label="F"];
+	"2018699554F3" [shape=circle, style=filled, fillcolor="cyan", label="F"];
 	"1311053135A4" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"118352462(5" [shape=circle, style=filled, fillcolor="sienna", label="("];
-	"1550089733E5" [shape=circle, style=filled, fillcolor="sienna", label="E"];
+	"118352462(5" [shape=circle, style=filled, fillcolor="lightblue", label="("];
+	"1550089733E5" [shape=circle, style=filled, fillcolor="gold3", label="E"];
 	"865113938T6" [shape=circle, style=filled, fillcolor="sienna", label="T"];
-	"1442407170F7" [shape=circle, style=filled, fillcolor="sienna", label="F"];
+	"1442407170F7" [shape=circle, style=filled, fillcolor="cyan", label="F"];
 	"1028566121A8" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"1118140819(9" [shape=circle, style=filled, fillcolor="sienna", label="("];
-	"1975012498E9" [shape=circle, style=filled, fillcolor="sienna", label="E"];
-	"1808253012T10" [shape=circle, style=filled, fillcolor="sienna", label="T"];
-	"589431969F11" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1252169911A12" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"2101973421a13" [shape=circle, style=filled, fillcolor="sienna", label="a"];
-	"1252169911A12" -- "2101973421a13";
-	{ rank=same "2101973421a13" }
-	"685325104F'12" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"589431969F11" -- "1252169911A12";
-	"589431969F11" -- "685325104F'12";
-	{ rank=same "1252169911A12","685325104F'12" }
-	"460141958T111" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1163157884F12" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1956725890A13" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"356573597b14" [shape=circle, style=filled, fillcolor="sienna", label="b"];
-	"1956725890A13" -- "356573597b14";
-	{ rank=same "356573597b14" }
-	"1735600054F'13" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1163157884F12" -- "1956725890A13";
-	"1163157884F12" -- "1735600054F'13";
-	{ rank=same "1956725890A13","1735600054F'13" }
-	"21685669T112" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"2133927002F13" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1836019240A14" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"325040804c15" [shape=circle, style=filled, fillcolor="sienna", label="c"];
-	"1836019240A14" -- "325040804c15";
-	{ rank=same "325040804c15" }
-	"1173230247F'14" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"856419764*15" [shape=circle, style=filled, fillcolor="sienna", label="*"];
-	"621009875F'15" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1173230247F'14" -- "856419764*15";
-	"1173230247F'14" -- "621009875F'15";
-	{ rank=same "856419764*15","621009875F'15" }
-	"2133927002F13" -- "1836019240A14";
-	"2133927002F13" -- "1173230247F'14";
-	{ rank=same "1836019240A14","1173230247F'14" }
-	"1265094477T113" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"2125039532F14" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"312714112A15" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"692404036b16" [shape=circle, style=filled, fillcolor="sienna", label="b"];
-	"312714112A15" -- "692404036b16";
-	{ rank=same "692404036b16" }
-	"1554874502F'15" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"2125039532F14" -- "312714112A15";
-	"2125039532F14" -- "1554874502F'15";
-	{ rank=same "312714112A15","1554874502F'15" }
-	"1846274136T114" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1265094477T113" -- "2125039532F14";
-	"1265094477T113" -- "1846274136T114";
-	{ rank=same "2125039532F14","1846274136T114" }
-	"21685669T112" -- "2133927002F13";
-	"21685669T112" -- "1265094477T113";
-	{ rank=same "2133927002F13","1265094477T113" }
-	"460141958T111" -- "1163157884F12";
-	"460141958T111" -- "21685669T112";
-	{ rank=same "1163157884F12","21685669T112" }
-	"1808253012T10" -- "589431969F11";
-	"1808253012T10" -- "460141958T111";
-	{ rank=same "589431969F11","460141958T111" }
-	"1639705018E110" [shape=circle, style=filled, fillcolor="gold3", label="E1"];
-	"1627674070|11" [shape=circle, style=filled, fillcolor="sienna", label="|"];
-	"1360875712T11" [shape=circle, style=filled, fillcolor="sienna", label="T"];
-	"1625635731F12" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1580066828A13" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"491044090a14" [shape=circle, style=filled, fillcolor="sienna", label="a"];
-	"1580066828A13" -- "491044090a14";
-	{ rank=same "491044090a14" }
-	"644117698F'13" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1625635731F12" -- "1580066828A13";
-	"1625635731F12" -- "644117698F'13";
-	{ rank=same "1580066828A13","644117698F'13" }
-	"1872034366T112" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1360875712T11" -- "1625635731F12";
-	"1360875712T11" -- "1872034366T112";
-	{ rank=same "1625635731F12","1872034366T112" }
-	"1581781576E111" [shape=circle, style=filled, fillcolor="gold3", label="E1"];
-	"1639705018E110" -- "1627674070|11";
-	"1639705018E110" -- "1360875712T11";
-	"1639705018E110" -- "1581781576E111";
-	{ rank=same "1627674070|11","1360875712T11","1581781576E111" }
-	"1975012498E9" -- "1808253012T10";
-	"1975012498E9" -- "1639705018E110";
-	{ rank=same "1808253012T10","1639705018E110" }
-	"1725154839)9" [shape=circle, style=filled, fillcolor="sienna", label=")"];
-	"1028566121A8" -- "1118140819(9";
-	"1028566121A8" -- "1975012498E9";
-	"1028566121A8" -- "1725154839)9";
-	{ rank=same "1118140819(9","1975012498E9","1725154839)9" }
-	"1670675563F'8" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"723074861*9" [shape=circle, style=filled, fillcolor="sienna", label="*"];
-	"895328852F'9" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1670675563F'8" -- "723074861*9";
-	"1670675563F'8" -- "895328852F'9";
-	{ rank=same "723074861*9","895328852F'9" }
+	"1118140819a9" [shape=circle, style=filled, fillcolor="lightblue", label="a"];
+	"1028566121A8" -- "1118140819a9";
+	{ rank=same "1118140819a9" }
+	"1975012498F'8" [shape=circle, style=filled, fillcolor="cyan", label="F'"];
 	"1442407170F7" -- "1028566121A8";
-	"1442407170F7" -- "1670675563F'8";
-	{ rank=same "1028566121A8","1670675563F'8" }
-	"1304836502T17" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"225534817F8" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1878246837A9" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"929338653a10" [shape=circle, style=filled, fillcolor="sienna", label="a"];
-	"1878246837A9" -- "929338653a10";
-	{ rank=same "929338653a10" }
-	"1259475182F'9" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"225534817F8" -- "1878246837A9";
-	"225534817F8" -- "1259475182F'9";
-	{ rank=same "1878246837A9","1259475182F'9" }
-	"1300109446T18" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1020371697F9" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"789451787A10" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"1950409828b11" [shape=circle, style=filled, fillcolor="sienna", label="b"];
-	"789451787A10" -- "1950409828b11";
-	{ rank=same "1950409828b11" }
-	"1229416514F'10" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1020371697F9" -- "789451787A10";
-	"1020371697F9" -- "1229416514F'10";
-	{ rank=same "789451787A10","1229416514F'10" }
-	"2016447921T19" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"666988784F10" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1414644648A11" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"640070680(12" [shape=circle, style=filled, fillcolor="sienna", label="("];
-	"1510467688E12" [shape=circle, style=filled, fillcolor="sienna", label="E"];
-	"1995265320T13" [shape=circle, style=filled, fillcolor="sienna", label="T"];
-	"746292446F14" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1072591677A15" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"1523554304a16" [shape=circle, style=filled, fillcolor="sienna", label="a"];
-	"1072591677A15" -- "1523554304a16";
-	{ rank=same "1523554304a16" }
-	"1175962212F'15" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"746292446F14" -- "1072591677A15";
-	"746292446F14" -- "1175962212F'15";
-	{ rank=same "1072591677A15","1175962212F'15" }
-	"918221580T114" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"2055281021F15" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"1554547125A16" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"617901222a17" [shape=circle, style=filled, fillcolor="sienna", label="a"];
-	"1554547125A16" -- "617901222a17";
-	{ rank=same "617901222a17" }
-	"1159190947F'16" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"2055281021F15" -- "1554547125A16";
-	"2055281021F15" -- "1159190947F'16";
-	{ rank=same "1554547125A16","1159190947F'16" }
-	"925858445T115" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"918221580T114" -- "2055281021F15";
-	"918221580T114" -- "925858445T115";
-	{ rank=same "2055281021F15","925858445T115" }
-	"1995265320T13" -- "746292446F14";
-	"1995265320T13" -- "918221580T114";
-	{ rank=same "746292446F14","918221580T114" }
-	"798154996E113" [shape=circle, style=filled, fillcolor="gold3", label="E1"];
-	"681842940|14" [shape=circle, style=filled, fillcolor="sienna", label="|"];
-	"1392838282T14" [shape=circle, style=filled, fillcolor="sienna", label="T"];
-	"523429237F15" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"664740647A16" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"804564176b17" [shape=circle, style=filled, fillcolor="sienna", label="b"];
-	"664740647A16" -- "804564176b17";
-	{ rank=same "804564176b17" }
-	"1421795058F'16" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1555009629*17" [shape=circle, style=filled, fillcolor="sienna", label="*"];
-	"41359092F'17" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1421795058F'16" -- "1555009629*17";
-	"1421795058F'16" -- "41359092F'17";
-	{ rank=same "1555009629*17","41359092F'17" }
-	"523429237F15" -- "664740647A16";
-	"523429237F15" -- "1421795058F'16";
-	{ rank=same "664740647A16","1421795058F'16" }
-	"149928006T115" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1392838282T14" -- "523429237F15";
-	"1392838282T14" -- "149928006T115";
-	{ rank=same "523429237F15","149928006T115" }
-	"713338599E114" [shape=circle, style=filled, fillcolor="gold3", label="E1"];
-	"798154996E113" -- "681842940|14";
-	"798154996E113" -- "1392838282T14";
-	"798154996E113" -- "713338599E114";
-	{ rank=same "681842940|14","1392838282T14","713338599E114" }
-	"1510467688E12" -- "1995265320T13";
-	"1510467688E12" -- "798154996E113";
-	{ rank=same "1995265320T13","798154996E113" }
-	"168423058)12" [shape=circle, style=filled, fillcolor="sienna", label=")"];
-	"1414644648A11" -- "640070680(12";
-	"1414644648A11" -- "1510467688E12";
-	"1414644648A11" -- "168423058)12";
-	{ rank=same "640070680(12","1510467688E12","168423058)12" }
-	"821270929F'11" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"666988784F10" -- "1414644648A11";
-	"666988784F10" -- "821270929F'11";
-	{ rank=same "1414644648A11","821270929F'11" }
-	"1160460865T110" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1247233941F11" [shape=circle, style=filled, fillcolor="sienna", label="F"];
-	"258952499A12" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
-	"603742814b13" [shape=circle, style=filled, fillcolor="sienna", label="b"];
-	"258952499A12" -- "603742814b13";
-	{ rank=same "603742814b13" }
-	"1067040082F'12" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1247233941F11" -- "258952499A12";
-	"1247233941F11" -- "1067040082F'12";
-	{ rank=same "258952499A12","1067040082F'12" }
-	"1325547227T111" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
-	"1160460865T110" -- "1247233941F11";
-	"1160460865T110" -- "1325547227T111";
-	{ rank=same "1247233941F11","1325547227T111" }
-	"2016447921T19" -- "666988784F10";
-	"2016447921T19" -- "1160460865T110";
-	{ rank=same "666988784F10","1160460865T110" }
-	"1300109446T18" -- "1020371697F9";
-	"1300109446T18" -- "2016447921T19";
-	{ rank=same "1020371697F9","2016447921T19" }
-	"1304836502T17" -- "225534817F8";
-	"1304836502T17" -- "1300109446T18";
-	{ rank=same "225534817F8","1300109446T18" }
+	"1442407170F7" -- "1975012498F'8";
+	{ rank=same "1028566121A8","1975012498F'8" }
+	"1808253012T'7" [shape=circle, style=filled, fillcolor="sienna", label="T'"];
 	"865113938T6" -- "1442407170F7";
-	"865113938T6" -- "1304836502T17";
-	{ rank=same "1442407170F7","1304836502T17" }
-	"980546781E16" [shape=circle, style=filled, fillcolor="gold3", label="E1"];
+	"865113938T6" -- "1808253012T'7";
+	{ rank=same "1442407170F7","1808253012T'7" }
+	"589431969E'6" [shape=circle, style=filled, fillcolor="gold3", label="E'"];
+	"1252169911|7" [shape=circle, style=filled, fillcolor="lightblue", label="|"];
+	"2101973421T7" [shape=circle, style=filled, fillcolor="sienna", label="T"];
+	"685325104F8" [shape=circle, style=filled, fillcolor="cyan", label="F"];
+	"460141958A9" [shape=circle, style=filled, fillcolor="darkviolet", label="A"];
+	"1163157884b10" [shape=circle, style=filled, fillcolor="lightblue", label="b"];
+	"460141958A9" -- "1163157884b10";
+	{ rank=same "1163157884b10" }
+	"1956725890F'9" [shape=circle, style=filled, fillcolor="cyan", label="F'"];
+	"685325104F8" -- "460141958A9";
+	"685325104F8" -- "1956725890F'9";
+	{ rank=same "460141958A9","1956725890F'9" }
+	"356573597T'8" [shape=circle, style=filled, fillcolor="sienna", label="T'"];
+	"2101973421T7" -- "685325104F8";
+	"2101973421T7" -- "356573597T'8";
+	{ rank=same "685325104F8","356573597T'8" }
+	"1735600054E'7" [shape=circle, style=filled, fillcolor="gold3", label="E'"];
+	"589431969E'6" -- "1252169911|7";
+	"589431969E'6" -- "2101973421T7";
+	"589431969E'6" -- "1735600054E'7";
+	{ rank=same "1252169911|7","2101973421T7","1735600054E'7" }
 	"1550089733E5" -- "865113938T6";
-	"1550089733E5" -- "980546781E16";
-	{ rank=same "865113938T6","980546781E16" }
-	"2061475679)5" [shape=circle, style=filled, fillcolor="sienna", label=")"];
+	"1550089733E5" -- "589431969E'6";
+	{ rank=same "865113938T6","589431969E'6" }
+	"21685669)5" [shape=circle, style=filled, fillcolor="lightblue", label=")"];
 	"1311053135A4" -- "118352462(5";
 	"1311053135A4" -- "1550089733E5";
-	"1311053135A4" -- "2061475679)5";
-	{ rank=same "118352462(5","1550089733E5","2061475679)5" }
-	"140435067F'4" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"1450495309*5" [shape=circle, style=filled, fillcolor="sienna", label="*"];
-	"1670782018F'5" [shape=circle, style=filled, fillcolor="sienna", label="F'"];
-	"140435067F'4" -- "1450495309*5";
-	"140435067F'4" -- "1670782018F'5";
-	{ rank=same "1450495309*5","1670782018F'5" }
+	"1311053135A4" -- "21685669)5";
+	{ rank=same "118352462(5","1550089733E5","21685669)5" }
+	"2133927002F'4" [shape=circle, style=filled, fillcolor="cyan", label="F'"];
+	"1836019240+5" [shape=circle, style=filled, fillcolor="lightblue", label="+"];
+	"325040804F'5" [shape=circle, style=filled, fillcolor="cyan", label="F'"];
+	"2133927002F'4" -- "1836019240+5";
+	"2133927002F'4" -- "325040804F'5";
+	{ rank=same "1836019240+5","325040804F'5" }
 	"2018699554F3" -- "1311053135A4";
-	"2018699554F3" -- "140435067F'4";
-	{ rank=same "1311053135A4","140435067F'4" }
-	"1706377736T13" [shape=circle, style=filled, fillcolor="sienna", label="T1"];
+	"2018699554F3" -- "2133927002F'4";
+	{ rank=same "1311053135A4","2133927002F'4" }
+	"1173230247T'3" [shape=circle, style=filled, fillcolor="sienna", label="T'"];
 	"1829164700T2" -- "2018699554F3";
-	"1829164700T2" -- "1706377736T13";
-	{ rank=same "2018699554F3","1706377736T13" }
-	"468121027E12" [shape=circle, style=filled, fillcolor="gold3", label="E1"];
+	"1829164700T2" -- "1173230247T'3";
+	{ rank=same "2018699554F3","1173230247T'3" }
+	"856419764E'2" [shape=circle, style=filled, fillcolor="gold3", label="E'"];
 	"366712642E1" -- "1829164700T2";
-	"366712642E1" -- "468121027E12";
-	{ rank=same "1829164700T2","468121027E12" }
+	"366712642E1" -- "856419764E'2";
+	{ rank=same "1829164700T2","856419764E'2" }
 	"705927765S0" -- "366712642E1";
 	{ rank=same "366712642E1" }
 }

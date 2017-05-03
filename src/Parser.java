@@ -13,7 +13,7 @@ public class Parser {
                 return;
             }
         }
-        throw new Pexception("unexpected symbol: " + lex.curToken().toString() + (char) lex.curChar() + " expected: " + Arrays.toString(arr));
+        throw new Pexception("unexpected symbol: " + lex.curToken().toString() + " expected: " + Arrays.toString(arr));
     }
 
     private Tree S() throws Pexception {
@@ -22,7 +22,7 @@ public class Parser {
             case END:
                 return new Tree("S", e);
             default:
-                throw new AssertionError();
+                throw new Pexception("Unexpected symbol: " + lex.curToken().toString() + " expected: END");
         }
     }
 
@@ -51,11 +51,14 @@ public class Parser {
     }
 
     private Tree F1() throws Pexception {
-        check(Token.KLEENE_CLOSURE, Token.CHARACTER, Token.CHOOSE, Token.END, Token.OPEN_BRACKET, Token.CLOSE_BRACKET);
+        check(Token.KLEENE_CLOSURE, Token.CHARACTER, Token.CHOOSE, Token.END, Token.OPEN_BRACKET, Token.CLOSE_BRACKET, Token.PLUS);
         switch (lex.curToken()) {
             case KLEENE_CLOSURE:
                 lex.nextToken();
                 return new Tree("F'", new Tree("*"), F1());
+            case PLUS:
+                lex.nextToken();
+                return new Tree("F'", new Tree("+"), F1());
             case CHARACTER:
             case CHOOSE:
             case END:
